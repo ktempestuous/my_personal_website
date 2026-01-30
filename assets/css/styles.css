@@ -347,3 +347,9 @@ nav a:focus-visible {
   margin-right: 0.4rem;
   font-size: 0.95em;
 }
+
+/* Ensure CV links stay white */
+.cv-item a,
+.cv-item a:visited {
+  color: var(--text);
+}
