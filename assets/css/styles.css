@@ -179,6 +179,10 @@ nav a:focus-visible {
   padding-bottom: 0;
 }
 
+.cv-item a {
+  color: #fff;
+}
+
 /* Metadata line (dates) */
 .cv-item-meta {
   font-size: 0.875rem;
