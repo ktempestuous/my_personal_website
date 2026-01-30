@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About – Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Single local stylesheet (Project Site safe relative path) -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <!-- Accessibility: skip navigation -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- This wrapper is what we center on the page -->
+  <div class="page">
+    <header class="site-header">
+      <h1>Name<span class="cursor" aria-hidden="true">▮</span></h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="./" aria-current="page">About</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-main" id="main">
+      <p>
+        About
+        me
+        :)
+      </p>
+
+      <div class="profile-links">
+        <p class="linkedin-link">
+          <a href="https://www.linkedin.com/in/dr-tempest/" rel="me">
+            <span class="linkedin-icon" aria-hidden="true">in</span>
+            <span class="linkedin-text">Connect with me on LinkedIn</span>
+          </a>
+        </p>
+
+        <p class="scholar-link">
+          <a href="https://scholar.google.com/citations?hl=en&user=tJB6RnUAAAAJ&view_op=list_works&sortby=pubdate">
+            <span class="paper-icon" aria-hidden="true">📄</span>
+            Check out my recent publications here
+          </a>
+        </p>
+      </div>
+
+      <!-- CV / timeline section starts here -->
+      <section class="cv-timeline" aria-labelledby="cv-heading">
+        <h2 id="cv-heading">Experience &amp; education</h2>
+
+        <!--
+          Timeline entries:
+          - To add a new entry:
+            1. Copy one entire <li class="cv-item">...</li> block
+            2. Paste it below the last entry
+            3. Edit the dates, role, organisation, and description
+        -->
+        <ol class="cv-timeline-list">
+          <li class="cv-item">
+            <div class="cv-item-header">
+              <!-- Date range: edit both the visible text and the datetime value -->
+              <p class="cv-item-meta">
+                <time datetime="2023">2023&nbsp;–&nbsp;Present</time>
+              </p>
+
+              <!-- Role / title -->
+              <h3 class="cv-item-role">Role name</h3>
+
+              <!-- Organisation / context -->
+              <p class="cv-item-org">Organisation name</p>
+            </div>
+
+            <!-- 1–2 line summary -->
+            <p class="cv-item-desc">
+              About
+            </p>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-item-header">
+              <p class="cv-item-meta">
+                <time datetime="2020">2020&nbsp;–&nbsp;2023</time>
+              </p>
+              <h3 class="cv-item-role">Role</h3>
+              <p class="cv-item-org">Organisation name</p>
+            </div>
+            <p class="cv-item-desc">
+              About
+            </p>
+          </li>
+
+          <li class="cv-item">
+            <div class="cv-item-header">
+              <p class="cv-item-meta">
+                <time datetime="2017">2017&nbsp;–&nbsp;2020</time>
+              </p>
+              <h3 class="cv-item-role">Education</h3>
+              <p class="cv-item-org">University</p>
+            </div>
+            <p class="cv-item-desc">
+              About
+            </p>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© Name </p>
+      <p class="carbon-note">
+        This website has an
+        <a href="https://www.websitecarbon.com/website/ktempestuous-github-io-skeleton_personal_website/">
+          A+ carbon rating
+        </a>
+        according to Website Carbon.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
