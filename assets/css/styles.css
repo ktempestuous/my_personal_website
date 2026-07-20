@@ -353,3 +353,11 @@ nav a:focus-visible {
 .cv-item a:visited {
   color: var(--text);
 }
+
+.blog-image {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
