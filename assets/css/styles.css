@@ -361,3 +361,21 @@ nav a:focus-visible {
   height: auto;
   margin: 0 auto;
 }
+
+article .post-figure--medium {
+  width: min(100%, 750px);
+  margin: 2rem auto;
+}
+
+article .post-figure--medium img {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+  margin: 0 auto;
+}
+
+article .post-figure--medium figcaption {
+  margin-top: 0.75rem;
+  text-align: center;
+}
