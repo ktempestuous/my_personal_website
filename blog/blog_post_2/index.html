@@ -1,1 +1,335 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mechanistic Interpretability Tool for AI Weather Models</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="An introduction to the Mechanistic Interpretability Tool for AI Weather Models and its workflow for exploring latent-space features."
+  >
+
+  <!-- Reuse the same site-wide stylesheet -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+
+  <!-- Small, post-specific styles for the image placeholders and step list. -->
+  <style>
+    .image-placeholder {
+      margin: 2rem 0;
+    }
+
+    .image-placeholder__box {
+      display: grid;
+      min-height: 14rem;
+      place-items: center;
+      padding: 1.5rem;
+      border: 2px dashed currentColor;
+      text-align: center;
+    }
+
+    .image-placeholder figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .tool-steps li {
+      margin-bottom: 1rem;
+    }
+
+    .tool-steps li p {
+      margin: 0.25rem 0 0;
+    }
+
+    .citation {
+      overflow-wrap: anywhere;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <div class="page">
+    <header class="site-header">
+      <h1>Blog<span class="cursor" aria-hidden="true">▮</span></h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="../../">About</a></li>
+          <li><a href="../">Blog</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="site-main" id="main">
+      <article>
+        <!-- Article title -->
+        <h2>Mechanistic Interpretability Tool for AI Weather Models</h2>
+
+        <!-- Publication date: change this if needed. -->
+        <time datetime="2026-07-20">Jul 20, 2026</time>
+
+        <!-- Article content -->
+        <section>
+          <h3>What’s going on inside AI weather models? 🌩️</h3>
+
+          <figure class="image-placeholder">
+            <!--
+              Replace the placeholder div below with an image such as:
+
+              <img
+                src="../../assets/images/black-box.webp"
+                alt="Illustration representing an AI weather model as a black box"
+                loading="lazy"
+                width="1200"
+                height="675"
+              >
+            -->
+            <div
+              class="image-placeholder__box"
+              role="img"
+              aria-label="Placeholder for the black box picture"
+            >
+              Picture placeholder: “black box”
+            </div>
+
+            <figcaption>
+              Replace this box with your “black box” picture.
+            </figcaption>
+          </figure>
+
+          <p>
+            This is a multifaceted question, not only because the numbers
+            within the latent space of the black box appear random, and there
+            are millions of them produced for any one forecast, but because
+            there are various methods already in use, each targeting a
+            different part of the interpretability question. Some methods
+            perturb the initial conditions and look at the effects on the
+            outputs, whilst others alter the inner states, for example by
+            adding an extra layer, and look at the effect.
+          </p>
+
+          <p>
+            Needless to say, it’s difficult to answer.
+          </p>
+
+          <p>
+            We are tackling this question from the viewpoint of mechanistic
+            interpretability, whereby we aim to connect real features, such as
+            tropical cyclones, with directions of neurons inside the model.
+            What we ultimately want to understand is how these neurons evolve
+            throughout the processor to create a prediction which can beat the
+            best traditional methods.
+          </p>
+
+          <p>
+            Our Mechanistic Interpretability Tool for AI Weather Models has
+            been created as a foundational step in the exploration of the
+            latent space of AI weather models, with mechanistic
+            interpretability in mind.
+          </p>
+        </section>
+
+        <hr>
+
+        <section>
+          <h3>The tool comprises four steps</h3>
+
+          <ol class="tool-steps">
+            <li>
+              <strong>Specify initial parameters</strong>
+
+              <p>
+                Including forecast date, weather model, and other settings.
+              </p>
+            </li>
+
+            <li>
+              <strong>Select meteorological feature</strong>
+
+              <p>
+                From a map of the input data, select the region where you want
+                to find the latent-space channels corresponding to a
+                meteorological feature situated there.
+              </p>
+            </li>
+
+            <li>
+              <strong>Extract black-box data</strong>
+
+              <p>
+                Latent feature vectors are extracted globally, and maps are
+                shown for the channels most activated in the selected region.
+              </p>
+            </li>
+
+            <li>
+              <strong>Further analysis</strong>
+
+              <p>
+                Cosine similarity analysis compares vectors in the latent
+                space.
+              </p>
+
+              <p>
+                Principal Component Analysis finds the directions with the
+                most variance.
+              </p>
+            </li>
+          </ol>
+
+          <figure class="image-placeholder">
+            <!--
+              Replace the placeholder div below with an image such as:
+
+              <img
+                src="../../assets/images/processor.webp"
+                alt="Schematic of data passing through the processor of an AI weather model"
+                loading="lazy"
+                width="1200"
+                height="675"
+              >
+            -->
+            <div
+              class="image-placeholder__box"
+              role="img"
+              aria-label="Placeholder for the processor picture"
+            >
+              Picture placeholder: “processor”
+            </div>
+
+            <figcaption>
+              Replace this box with your “processor” schematic.
+            </figcaption>
+          </figure>
+
+          <p>
+            The plot above gives a schematic of how to think about the data
+            organised by the tool. Each AI weather model begins on the left,
+            taking in meteorological fields representing the most recent state
+            of the atmosphere and embedding these into a mesh covering the
+            globe. This mesh consists of nodes connected by edges. At each node
+            there is a vector with the length of the latent dimension, with
+            each entry known as a “channel”. Within each stage of the processor
+            — 16 here — these nodes are then updated, often with a residual
+            connection. It is the value of a selected channel at a specified
+            processor step which is then plotted as a global map. Finally, the
+            last processor step is decoded back into meteorological variables.
+          </p>
+
+          <p>
+            See the
+            <a href="#resources">paper linked at the bottom of this page</a>
+            for two case studies in which this tool has led to connections
+            being found between the latent space and midlatitude
+            synoptic-scale waves, as well as specific humidity.
+          </p>
+        </section>
+
+        <hr>
+
+        <section>
+          <h3>How to use the tool</h3>
+
+          <p>
+            To use this tool, there’s a simple recipe to follow:
+          </p>
+
+          <figure class="image-placeholder">
+            <!--
+              Replace the placeholder div below with an image such as:
+
+              <img
+                src="../../assets/images/recipe.webp"
+                alt="Recipe showing the steps for using the mechanistic interpretability tool"
+                loading="lazy"
+                width="1200"
+                height="675"
+              >
+            -->
+            <div
+              class="image-placeholder__box"
+              role="img"
+              aria-label="Placeholder for the recipe picture"
+            >
+              Picture placeholder: “Recipe”
+            </div>
+
+            <figcaption>
+              Replace this box with your “Recipe” picture.
+            </figcaption>
+          </figure>
+
+          <p>
+            To get started, sample data are also available for you to use.
+          </p>
+        </section>
+
+        <hr>
+
+        <section id="resources">
+          <h3>Are you interested?</h3>
+
+          <p>
+            If you’re using the tool, or are keen to but don’t know where to
+            begin, please let me know by contacting me at the email address
+            listed in the paper.
+          </p>
+
+          <p class="citation">
+            <strong>Cite as:</strong><br>
+
+            Tempest, K.I., Beylich, M., Craig, G.C. (2026). Mechanistic
+            Interpretability Tool for AI Weather Models. In: Paszynski, M.,
+            Barnard, A.S., Zhang, Y.J. (eds)
+            <cite>Computational Science – ICCS 2026 Workshops</cite>.
+            ICCS 2026. Lecture Notes in Computer Science, vol 16788.
+            Springer, Cham.
+
+            <a href="https://doi.org/10.1007/978-3-032-29915-4_10">
+              https://doi.org/10.1007/978-3-032-29915-4_10
+            </a>
+          </p>
+
+          <p>
+            📃 <strong>Open-access preprint:</strong>
+
+            <a href="https://arxiv.org/abs/2604.20467">
+              https://arxiv.org/abs/2604.20467
+            </a>
+          </p>
+
+          <p>
+            🧰 <strong>Tool:</strong>
+
+            <a href="https://github.com/ktempestuous/latent_space_visualiser_weather_models">
+              https://github.com/ktempestuous/latent_space_visualiser_weather_models
+            </a>
+
+            (sample data provided)
+          </p>
+        </section>
+
+        <!-- Back link -->
+        <p>
+          <a href="../">← Back to blog</a>
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p class="carbon-note">
+        This website has an
+
+        <a href="https://www.websitecarbon.com/website/ktempestuous-github-io-skeleton_personal_website/">
+          A+ carbon rating
+        </a>
+
+        according to Website Carbon.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
